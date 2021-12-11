@@ -1,0 +1,123 @@
+Первое ДЗ 
+Linux terminal (GitBash) commands
+
+1) Посмотреть где я 
+pwd 
+(print work directory)
+
+2) Создать папку
+mkdir Lesson_1
+(make directory)
+
+3) Зайти в папку
+cd Lesson_1
+(change directory)
+cd !$ - зайти в только что созданную папку
+
+4) Создать 3 папки
+mkdir dir1 dir2 dir3
+
+5) Зайти в любую папку
+cd dir1
+
+6) Создать 5 файлов (3 txt, 2 json)
+touch test1.txt test2.txt test3.txt test4.json test5.json
+
+7) Создать 3 папки
+mkdir Folder1 Folder2 Folder3
+
+8. Вывести список содержимого папки
+ls -la
+(list)
+
+9) + Открыть любой txt файл
+nano test1.txt 
+или
+vim test1.txt - я предпочитаю vim
+
+10) + написать туда что-нибудь, любой текст.
+I (внизу появляется надпись INSERT) - ввести текст
+(insert)
+
+11) + сохранить и выйти.
+esc
+:wq - если нужно сохранить изменения
+:q! - если нужно выйти без изменений
+
+12) Выйти из папки на уровень выше
+cd ..
+
+13) переместить любые 2 файла, которые вы создали, в любую другую папку.
+mv test2.txt Folder1/test2.txt
+mv test4.json Folder1/test4.json
+(move)
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку.
+cp test3.txt Folder2/test3.txt
+cp test5.json Folder2/test5.json
+(copy)
+
+15) Найти файл по имени
+find . filename - находит файл с этим именем  в текущей директории
+find -name filename* - находит файл везде
+find . -type d -name "folder*" - находит папки содержащие в названии folder в текущей директории
+
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.
+cat test1.txt - показывает содержимое файла в консоли
+grep text filename - ищет и показывает указанный текст в выбранном файле
+grep -i text filename - делает регистронезависимый поиск и выводит результат
+grep -v text filename - делает поиск и выводит результат кроме указанного текста, т.е. исключает наш запрос
+grep -с text filename - считает количество строк в которых находится наш целевой запрос
+grep -iс text filename - посчитает количество строк с нашим запросом регистронезависимо
+grep -R text foldername - найдет запрошенный текст в файлах в указанной папке
+ 
+17) вывести несколько первых строк из текстового файла
+head filename
+
+18) вывести несколько последних строк из текстового файла
+tail filename
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает.
+less filename - открывает файл в редакторе less
+/text - выделяет текст
+выход - q
+
+20) вывести дату и время
+date
+
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000
+echo http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000
+получила в ответ:
+71930@LAPTOP-USGQDIEB MINGW64 /c/Julia/Ksendzov/Lesson_1/dir1
+$ echo http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000
+[1] 1994
+http://162.55.220.72:5005/object_info_3?name=Vadim
+[2] 1995
+[1]-  Done                    echo http://162.55.220.72:5005/object_info_3?name=Vadim
+[2]+  Done                    age=32
+
+
+curl http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000
+получила в ответ:
+71930@LAPTOP-USGQDIEB MINGW64 /c/Julia/Ksendzov/Lesson_1
+$ curl http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000
+[1] 2015
+[2] 2016
+[2]+  Done                    age=32
+
+71930@LAPTOP-USGQDIEB MINGW64 /c/Julia/Ksendzov/Lesson_1
+$   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   290  100   290    0     0    143      0  0:00:02  0:00:02 --:--:--   143<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+Не очень поняла разницу :(
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+это задание пока отложу - сложновато для меня на данном этапе
